@@ -1,0 +1,133 @@
+<div class="page-header">
+  <h3 class="page-title">
+    <span class="page-title-icon bg-gradient-primary text-white me-2">
+      <i class="mdi mdi-tokopedia"></i>
+    </span>
+    Tokopedia
+  </h3>
+</div>
+<div class="card">
+  <div class="card-body">
+    <button
+      type="button"
+      class="btn btn-gradient-primary btn-icon-text addButton"
+      data-toggle="modal"
+      data-target="#modalTokopedia"
+    >
+      <i class="mdi mdi-account-plus"></i> Tambah
+    </button>
+    <div style="overflow-x: auto">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama Akun</th>
+            <th>Nomor HP</th>
+            <th>Saldo Tokopedia</th>
+            <th>Saldo OVO</th>
+            <th>Level Member</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% profiles.forEach(profile => { %>
+          <tr id="<%= profile.id %>" data-bearer="<%= profile.authorization %>">
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+    <!-- Modal Tambah -->
+    <div class="modal fade" id="modalTokopedia">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Masukkan Bearer</h5>
+          </div>
+          <!-- Element untuk pesan kesalahan -->
+          <div
+            class="alert alert-danger"
+            id="error-message-tambah"
+            style="display: none"
+          ></div>
+
+          <div class="modal-body">
+            <div class="input-group mb-2 mr-sm-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">Bearer</div>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="Bearer"
+                placeholder="xxxxxxxxxxxxx"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Tutup
+            </button>
+            <button type="button" class="btn btn-primary" id="simpanBearer">
+              Simpan
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Update -->
+    <div class="modal fade" id="modalUpdateTokopedia">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Masukkan Bearer</h5>
+          </div>
+          <!-- Element untuk pesan kesalahan -->
+          <div
+            class="alert alert-danger"
+            id="error-message-update"
+            style="display: none"
+          ></div>
+
+          <div class="modal-body">
+            <div class="input-group mb-2 mr-sm-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">Bearer</div>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="updateBearerTokopedia"
+                placeholder="xxxxxxxxxxxxx"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Tutup
+            </button>
+            <button type="button" class="btn btn-primary" id="updateBearer">
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/tokopedia-request.js" defer></script>
